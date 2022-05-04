@@ -7,6 +7,16 @@
 [materialize](https://materializecss.com/)
 
 # summary
+- make a own url to provide data
+    1.  ```urlA``` I get from the tutorial, it **works well**,but i want to modify picture in someday?
+    2. ```urlB``` I try from the [How to Use Github for Hosting Files](https://www.labnol.org/internet/free-file-hosting-github/29092/) ,but **~~faild~~**
+    3. ```url``` i get from ```urlB``` after press the Enter button in address bar of browser. it **works well** too!
+```js
+// App.js
+const urlA = 'https://course-api.com/react-tours-project'
+const urlB = 'https://github.com/libregd/warehouse/blob/main/john-smilga/tour.json?raw=true'
+const url = 'https://raw.githubusercontent.com/libregd/warehouse/main/john-smilga/tour.json'
+```
 
 - useEffect() need to learning
   [React useEffect Hooks](https://www.w3schools.com/react/react_useeffect.asp)
