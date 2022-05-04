@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Loading from './Loading'
 import Tours from './Tours'
 
-const urlA = 'https://course-api.com/react-tours-project'
-const urlB = 'https://github.com/libregd/warehouse/blob/main/john-smilga/tour.json?raw=true'
+//const urlA = 'https://course-api.com/react-tours-project'
+//const urlB = 'https://github.com/libregd/warehouse/blob/main/john-smilga/tour.json?raw=true'
 const url = 'https://raw.githubusercontent.com/libregd/warehouse/main/john-smilga/tour.json'
 
 const App = () => {
