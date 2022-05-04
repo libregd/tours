@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Loading from './Loading'
 import Tours from './Tours'
 const url = 'https://course-api.com/react-tours-project'
@@ -10,7 +10,7 @@ const App = () => {
     const newTours = tours.filter((tour) => tour.id !== id)
     setTours(newTours);
   }
-
+  // good fetch example ,use try catch to keep good running for moudle flow.
   const fetchTours = async () => {
     setLoading(true)
     try {
@@ -23,6 +23,11 @@ const App = () => {
       console.log(error)
     }
   }
+  /* useeffect init the fetchAPI first, the 2nd pramater is [] 
+   empty array that means website render first time, I will run the 1st pramater */
+  useEffect(() => {
+    fetchTours()
+  }, [])
   if (loading) {
     return (
       <main>
@@ -33,19 +38,19 @@ const App = () => {
   if (tours.length === 0) {
     return (
       <main>
-        <h4>
+        <h4 className="center header">
           no tours left
         </h4>
-        <div className="mt-3 sm:mt-0 sm:ml-3" onClick={() => fetchTours()}>
-          <a href="/" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+        <div className="center" onClick={() => fetchTours()}>
+          <button className="waves-effect waves-light btn">
             refresh
-          </a>
+          </button>
         </div>
       </main>
     )
   }
 
-
+  // everything is ok, return the turely data
   return (
     <main>
       <Tours tours={tours} removeTour={removeTour} />
